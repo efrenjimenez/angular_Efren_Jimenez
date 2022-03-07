@@ -1,0 +1,29 @@
+
+    <!-- <h2>Listado de usuarios</h2> -->
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr class="filters">
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Nick</th>
+                <th>Contraseña</th>
+                <th>Fecha nacimiento</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apellidos }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.nick }}</td>
+                <td>{{ usuario.password }}</td>
+                <td>{{ usuario.fechaNac }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

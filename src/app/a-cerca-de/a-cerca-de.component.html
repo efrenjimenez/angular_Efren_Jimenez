@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="mt-3 mb-4">
+    <h2>Acerca de</h2>
+  </div>
+  <div class="row, mb-5">
+    <div class="card">
+      <h5 class="card-header bg-succes">Autor</h5>
+      <div class="card-body">
+        <h5 class="card-title">{{ autor.nombre+" "+autor.apellidos | titlecase }}</h5>
+        <p class="card-text">
+          {{ asignatura | titlecase }}<br>
+          {{ curso | uppercase }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row, mb-5">
+    <div class="card">
+      <h5 class="card-header">Herramientas y tecnologías</h5>
+      <div class="card-body">
+        <h6 class="card-text">Para este proyecto se ha usado las siguientes tecnologías:</h6>
+        <ul class="list-group list-group-flush" >
+          <li class="list-group-item" *ngFor="let tecnologia of tecnologias">{{ tecnologia }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row, mb-5">
+    <div class="card">
+      <h5 class="card-header">Directivas</h5>
+      <div class="card-body">
+        <!-- <h5 class="card-title">Special title treatment</h5> -->
+        <p class="card-text">Relación de las distintas directivas usadas:</p>
+        <div class="col-10 table-responsive">
+          <table class="table table-bordered table-striped tabla">
+            <thead>
+                <tr class="filters">
+                    <th>Directiva</th>
+                    <th>Tipo</th>
+                    <th>Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ngIf</td>
+                    <td>Estructural</td>
+                    <td>
+                      <ul>
+                        <li>Según la hora del día muestro un saludo personalizado debajo de "Bienvenido".</li>
+                        <li>En la validación de los formularios para mostrar el mensaje de error.</li>
+                      </ul>
+                    </td>
+                </tr>
+								<tr>
+									<td>ngfor</td>
+									<td>Estructural</td>
+									<td>
+										<ul>
+											<li>Mostrar datos del servicio usuarios en "Acerca de".</li>
+											<li>Mostrar la lista de tecnologías en "Acerca de".</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<td>ngClass</td>
+									<td>Atributo</td>
+									<td>
+										<ul>
+											<li>Cambiar la clase del botón "Cambiar foto" y que cambié el color.</li>
+											<li>Cambiar la clase de la imagen y que la muestre  con forma ovalada.</li>
+										</ul>
+									</td>
+								</tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row, mb-5">
+    <div class="card">
+      <h5 class="card-header">Bibliografía</h5>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row, mb-5">
+    <div class="card">
+      <h5 class="card-header">Usuarios</h5>
+      <div class="card-body">
+        <h5 class="card-title">Listado de usuarios registrados</h5>
+        <p class="card-text">Este listado de usuario proviene de una lista del servicio usuarios.</p>
+        <div class="col-9 ">
+          <app-listado-usuarios></app-listado-usuarios>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

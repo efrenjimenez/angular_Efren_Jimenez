@@ -1,0 +1,45 @@
+<nav class="navbar sticky-top navbar-expand-sm navbar-light bg-faded rounded bg-warning">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <!-- enlaces -->
+  <div class="collapse navbar-collapse" id="opciones">   
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">{{ opcion1 }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">{{ opcion2 }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/registro">{{ opcion3 }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/acercade">{{ opcion4 }}</a>
+      </li>
+      <div *ngIf="usuarioLog!=null">
+        <li class="nav-item">
+          <a class="nav-link" >Usuario: {{usuarioLog.nick}}</a>
+        </li>
+      </div>
+      <div *ngIf="usuarioLog!=undefined">
+        <li class="nav-item">
+          <a class="nav-link" href="" (click)="salir()">Salir</a>
+        </li>
+      </div>
+      <!-- <li class="nav-item">
+        <div class="dropdown open">
+          <button class="btn btn-warning dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+                Dropdown
+              </button>
+          <div class="dropdown-menu" aria-labelledby="triggerId">
+            <button class="dropdown-item" href="#">Action</button>
+            <button class="dropdown-item disabled" href="#">Disabled action</button>
+          </div>
+        </div>
+      </li>            -->
+    </ul>
+  </div>
+</nav>

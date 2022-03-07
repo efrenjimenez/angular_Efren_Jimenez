@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6">
+        <!-- <img src="{{ srcFoto }}" class="rounded img-fluid" alt="Responsive image"> -->
+        <img src="{{ srcFoto }}" class="img-fluid" [ngClass]="{
+                'rounded-circle': forma == 'ovalada',
+                'rounded': forma == 'cuadrada'}" alt="Responsive image">
+    </div>
+    <div class="p-4 col-md-6">
+        <h1 class="display-3">Bienvenido</h1>
+        <app-saludo></app-saludo>
+        <hr class="my-2">
+        <p>Más información</p>
+        <!-- <a [class]="clase" role="button" (click)="cambiarFoto()">Cambia la foto</a> -->
+        <a class="btn btn-lg" [ngClass]="{
+                    'btn-warning': color == 'amarillo',
+                    'btn-primary': color == 'azul' }" role="button" (click)="cambiarFoto()">
+            Cambiar foto
+        </a>
+        <br>
+        <a class="btn btn-success btn-lg mt-3" role="button" (click)="redondear()">
+            <span *ngIf="forma=='cuadrada'; else restaurar">Redondear</span>
+            <ng-template #restaurar>
+                <span>Restaurar</span>
+            </ng-template>
+        </a>
+
+    </div>
+
+</div>
