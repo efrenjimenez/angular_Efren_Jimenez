@@ -7,40 +7,67 @@
                     <label for="nombre" class="col-md-4 col-form-label">Nombre</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="nombre" ngModel name="nombre" required nombre>
+                        <p class="alert alert-danger" *ngIf="formusu.controls.nombre.invalid && formusu.controls.nombre.touched">
+                            Por favor introduzca un nombre.
+                        </p> 
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label for="apellidos" class="col-md-4 col-form-label">Apellidos</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="apellidos" ngModel name="apellidos" required apellidos>
+                        <p class="alert alert-danger" *ngIf="formusu.controls.apellidos.invalid && formusu.controls.apellidos.touched">
+                            Por favor introduzca al menos un apellido.
+                        </p> 
                     </div>
                 </div>                
                 <div class="row mb-4">
                     <label for="email" class="col-md-4 col-form-label">Email</label>
                     <div class="col-md-8">
                         <input type="email" class="form-control" id="email" ngModel name="email" required email>
+                        <p class="alert alert-danger" *ngIf="formusu.controls.email.invalid && formusu.controls.email.touched">
+                            Por favor introduzca una dirección de correo correcta.
+                        </p> 
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label for="fechaNac" class="col-md-4 col-form-label">Fecha nacimiento</label>
                     <div class="col-md-8">
                         <input type="date" class="form-control" id="fechaNac" ngModel name="fechaNac" required fechaNac>
+                        <p class="alert alert-danger" *ngIf="formusu.controls.fechaNac.invalid && formusu.controls.fechaNac.touched">
+                            Por favor introduzca su fecha de nacimiento.
+                        </p> 
                     </div>
                 </div> 
                 <div class="row mb-4">
                     <label for="nick" class="col-md-4 col-form-label">Usuario</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="nick" ngModel name="nick" required nick>
+                        <p class="alert alert-danger" *ngIf="formusu.controls.nick.invalid && formusu.controls.nick.touched">
+                            Por favor introduzca un nombre de usuario.
+                        </p> 
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label for="password" class="col-md-4 col-form-label">Password</label>
                     <div class="col-md-8">
                         <input type="password" class="form-control" id="password" ngModel name="password" required password>
+                        <p class="alert alert-danger" *ngIf="formusu.controls.password.invalid && formusu.controls.password.touched">
+                            Por favor introduzca la contraseña.
+                        </p>
                     </div>
-                </div>                        
+                </div>
+                <div class="row mb-4">
+                    <label for="password2" class="col-md-4 col-form-label">Repite password</label>
+                    <div class="col-md-8">
+                        <input type="password" class="form-control" id="password2" ngModel name="password2" required password2>
+                        <p class="alert alert-danger" *ngIf="formusu.controls.password.invalid && formusu.controls.password.touched">
+                            Por favor introduzca la contraseña.
+                        </p>
+                    </div>
+                </div>                           
                 <button type="submit" class="btn btn-primary mt-2" [disabled]="!formusu.valid">Darme de alta</button>
-                        <p class="alert alert-danger mt-3 " *ngIf="!formusu.valid && formusu.controls.password.touched"> Por favor complete todos los campos correctamente</p>
+                        <!-- <p class="alert alert-danger mt-3 " *ngIf="!formusu.valid && formusu.controls.password.touched"> Por favor complete todos los campos correctamente</p> -->
             </form>
         </div>
         <div class="col-6 mt-5">

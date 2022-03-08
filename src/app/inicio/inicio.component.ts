@@ -22,6 +22,10 @@ export class InicioComponent implements OnInit {
       this.localStorageService.set("usuarios", this.usuariosService.getUsuarios())
     }
 
+    if(sessionStorage.getItem("logeado")==null){
+      sessionStorage.setItem("logeado","false")
+    }
+
   }
 
 }

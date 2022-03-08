@@ -14,6 +14,8 @@ export class FormularioComponent implements OnInit {
 
   @ViewChild('formusu') formusu!: NgForm;
   usuario: Usuario;
+  fechaActual: any = new Date();
+  fechaForm: any;
 
   constructor(private usuariosService: UsuariosService, private localStorageService: LocalstorageService) {
     this.usuario = {
@@ -37,19 +39,30 @@ export class FormularioComponent implements OnInit {
       this.formusu.value.password, 
     )
 
-    // this.usuario.nombre=this.formusu.value.nombre;
-    // this.usuario.apellidos=this.formusu.value.apellidos;
-    // this.usuario.email=this.formusu.value.email;
-    // this.usuario.password=this.formusu.value.password;
-    // this.usuario.fechaNac=this.formusu.value.fechaNac;
+    this.fechaForm=new Date(this.formusu.value.fechaNac);
 
-    this.formusu.reset();
-    
-    this.usuariosService.insertUsuario(this.usuario);
-    this.localStorageService.set("usuarios", this.usuariosService.getUsuarios())
-
-    this.localStorageService.set(this.usuario.nick, this.usuario);
+    if(this.localStorageService.get(this.formusu.value.nick)!= null){
+      alert("El usuario ya existe")
+    }
+    else if(this.fechaForm>this.fechaActual){
+      alert("La fecha no puede ser posterior al día de hoy")
+    }
+    else if(this.formusu.value.password != this.formusu.value.password2){
+      alert("La contraseñas no coinciden")
+    }
+    else{
+      
+      this.formusu.reset();
+      
+      this.usuariosService.insertUsuario(this.usuario);
+      this.localStorageService.set("usuarios", this.usuariosService.getUsuarios())
+      
+      this.localStorageService.set(this.usuario.nick, this.usuario);
+      alert("Usuario "+this.usuario.nick+" dado del alta")
+    }
   }
+
+
 
   ngOnInit(): void {
 

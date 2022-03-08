@@ -7,16 +7,23 @@
                     <label for="nick" class="col-md-4 col-form-label">Usuario</label>
                     <div class="col-md-8">
                         <input type="text" class="form-control" id="nick" ngModel name="nick" required nick>
+                        <p class="alert alert-danger" *ngIf="formlog.controls.nick.invalid && formlog.controls.nick.touched">
+                            Por favor introduzca el usuario.
+                        </p> 
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label for="password" class="col-md-4 col-form-label">Password</label>
                     <div class="col-md-8">
                         <input type="password" class="form-control" id="password" ngModel name="password" required password>
+                        <p class="alert alert-danger" *ngIf="formlog.controls.password.invalid && formlog.controls.password.touched">
+                            Por favor introduzca el usuario.
+                        </p> 
                     </div>
                 </div>   
                 <button type="submit" class="btn btn-primary mt-2" [disabled]="!formlog.valid">Entrar</button>
-                        <p class="alert alert-danger mt-3 " *ngIf="!formlog.valid && formlog.controls.password.touched"> Por favor complete todos los campos</p>            </form>
+                        <!-- <p class="alert alert-danger mt-3 " *ngIf="!formlog.valid && formlog.controls.password.touched"> Por favor complete todos los campos</p>             -->
+            </form>
         </div>
         <div class="col-5 offset-sm-1 mt-4">
             <img src="../../assets/img/candado.png" class="rounded img-fluid" alt="Responsive image">
