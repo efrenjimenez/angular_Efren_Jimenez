@@ -6,12 +6,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VigilanteGaleriaGuard implements CanActivate {
+
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       
     if(sessionStorage.getItem("logeado")=="false"){
-      location.href="nodisponible";
+      //window.location.href="nodisponible";
+      window.location.href="";
       return false;
     }
     else{

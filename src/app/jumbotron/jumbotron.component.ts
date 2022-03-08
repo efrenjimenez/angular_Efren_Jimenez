@@ -11,16 +11,16 @@ export class JumbotronComponent implements OnInit {
   color: string ="azul";
   forma: string = "cuadrada";
 
-  srcFoto: string ="../assets/img/inicio.jpg";
+  srcFoto: string ="assets/img/inicio.jpg";
 
   cambiarFoto(){
-    if(this.srcFoto=="../assets/img/inicio.jpg"){
-      this.srcFoto="../assets/img/t1_completa2.jpg"
+    if(this.srcFoto=="assets/img/inicio.jpg"){
+      this.srcFoto="assets/img/t1_completa2.jpg"
       console.log("primero")
     }
-    else if(this.srcFoto!="../assets/img/inicio.jpg"){
+    else if(this.srcFoto!="assets/img/inicio.jpg"){
       console.log("segundo")
-      this.srcFoto="../assets/img/inicio.jpg"
+      this.srcFoto="assets/img/inicio.jpg"
     }
   }
 

@@ -40,7 +40,8 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem("usuarioLogeado", JSON.stringify(this.usuarioLogeado))
         //this.UsuarioService.setUsuarioLogeado(this.usuarioLogeado)
         alert("Sesión iniciada como "+this.usuarioLogeado.nick)
-        location.href="/"
+        location.href=""
+
         
       }
     else{

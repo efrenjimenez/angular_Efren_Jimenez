@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Usuario } from '../modelos/usuario.modelo';
 import { UsuariosService } from '../servicios/usuarios.service';
 import { LocalstorageService } from '../servicios/localstorage.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class FormularioComponent implements OnInit {
   fechaActual: any = new Date();
   fechaForm: any;
 
-  constructor(private usuariosService: UsuariosService, private localStorageService: LocalstorageService) {
+  constructor(private usuariosService: UsuariosService, private localStorageService: LocalstorageService, private router:Router) {
     this.usuario = {
       id:0,
       nombre:'',
