@@ -5,7 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class LocalstorageService {
 
-  constructor() { }
+  data: string | null=null;
+
+  constructor() {
+
+  }
 
   set(key: string, data: any): void {
     try {
@@ -17,7 +21,13 @@ export class LocalstorageService {
 
   get(key: string): any {
     try {
-      return JSON.parse(localStorage.getItem(key) || '{}');
+      this.data=localStorage.getItem(key);
+      if(this.data==null){
+        return null;
+      }
+      else{
+        return JSON.parse(this.data);
+      }
     } catch (e) {
       console.error('Error al recuperar', e);
       return null;

@@ -16,8 +16,11 @@ export class InicioComponent implements OnInit {
     for(var usuario of this.usuariosService.getUsuarios()){
       this.localStorageService.set(usuario.nick, usuario)
     }
-    //Y también los meto todos en un mismo item para poder recuperarlos para listarlos
-    this.localStorageService.set("usuarios", this.usuariosService.getUsuarios())
+    
+    //Si no existe la lista de usuario en LocalStorage, meto la lista inicial que sólo contiene al admin.
+    if(this.localStorageService.get("usuarios")==null){
+      this.localStorageService.set("usuarios", this.usuariosService.getUsuarios())
+    }
 
   }
 

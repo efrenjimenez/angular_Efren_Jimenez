@@ -30,29 +30,26 @@ export class LoginComponent implements OnInit {
 
     this.usuarioLogeado=this.LocalstorageService.get(this.login.nick);
     
-    if(this.usuarioLogeado==undefined){
-
+    if(this.usuarioLogeado==null){
+      console.log(this.usuarioLogeado==null)
+      alert("El usuario no existe")
+      sessionStorage.setItem("logeado", "false")
     }
-    else{
-      if(this.usuarioLogeado.id==undefined){
-        alert("El usuario no existe")
-        sessionStorage.setItem("logeado", "false")
-      }
-      else if(this.usuarioLogeado.password==this.login.password){
+    else if(this.usuarioLogeado.password==this.login.password){
         sessionStorage.setItem("logeado", "true")
         sessionStorage.setItem("usuarioLogeado", JSON.stringify(this.usuarioLogeado))
-        this.UsuarioService.setUsuarioLogeado(this.usuarioLogeado)
+        //this.UsuarioService.setUsuarioLogeado(this.usuarioLogeado)
         alert("Sesión iniciada como "+this.usuarioLogeado.nick)
         location.href="/"
         
       }
-      else{
-        alert("Contraseña incorrecta")
-        sessionStorage.setItem("logeado", "false")
-        sessionStorage.removeItem("usuarioLogeado")
-      }
-      
+    else{
+      alert("Contraseña incorrecta")
+      sessionStorage.setItem("logeado", "false")
+      sessionStorage.removeItem("usuarioLogeado")
     }
+      
+    
 
     this.formlog.reset();
   }

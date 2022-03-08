@@ -15,6 +15,7 @@ export class ListadoUsuariosComponent implements OnInit {
   constructor(private usuariosService: UsuariosService,private localStorageService: LocalstorageService) { }
 
   ngOnInit(): void {
+    console.log(this.localStorageService.get("usuarios"))
     this.usuarios = this.localStorageService.get("usuarios");
 
   }

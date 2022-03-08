@@ -9,11 +9,11 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/">{{ opcion1 }}</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="usuarioLog==undefined">
         <a class="nav-link" routerLink="/login">{{ opcion2 }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/registro">{{ opcion3 }}</a>
+        <a class="nav-link" routerLink="/registro" *ngIf="usuarioLog==undefined">{{ opcion3 }}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/acercade">{{ opcion4 }}</a>

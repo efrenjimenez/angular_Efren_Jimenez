@@ -15,20 +15,20 @@ export class UsuariosService {
     {id:1, nombre: 'Admin', apellidos: 'Admin', email:'admin@admin.com', fechaNac:'11-02-1990', nick:'admin', password: 'admin'}
   ];
 
-  public usuarioLogeado: Usuario | undefined;
+  //public usuarioLogeado: Usuario | undefined;
 
   getUsuarios(){
     return this.usuarios;
   }
 
-  setUsuarioLogeado(usuario: Usuario){
-    this.usuarioLogeado=usuario;
-  }
+  // setUsuarioLogeado(usuario: Usuario){
+  //   this.usuarioLogeado=usuario;
+  // }
 
-  getUsuarioLogeado(){
-    return this.usuarioLogeado;
+  // getUsuarioLogeado(){
+  //   return this.usuarioLogeado;
 
-  }
+  // }
 
   saveUsuarios(){
     this.dataService.guardarUsuarios(this.usuarios);

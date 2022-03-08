@@ -25,13 +25,16 @@ import { InicioComponent } from './inicio/inicio.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { LoginComponent } from './login/login.component';
+import { VigilanteGuard } from './vigilante.guard';
+import { RutaNoValidaComponent } from './ruta-no-valida/ruta-no-valida.component';
 
 //Rutas
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'acercade', component: ACercaDeComponent },
-  { path: 'registro', component: FormularioComponent },
-  { path: 'login', component: LoginComponent},
+  { path: 'registro', component: FormularioComponent,canActivate: [VigilanteGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [VigilanteGuard]},
+  { path: 'nodisponible', component: RutaNoValidaComponent },
   { path: '**', component: InicioComponent}
 
 ];
@@ -51,7 +54,8 @@ const routes: Routes = [
     InicioComponent,
     FormularioComponent,
     CarruselComponent,
-    LoginComponent
+    LoginComponent,
+    RutaNoValidaComponent
   ],
   imports: [
     BrowserModule,
