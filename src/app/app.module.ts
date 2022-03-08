@@ -27,6 +27,9 @@ import { CarruselComponent } from './carrusel/carrusel.component';
 import { LoginComponent } from './login/login.component';
 import { VigilanteGuard } from './vigilante.guard';
 import { RutaNoValidaComponent } from './ruta-no-valida/ruta-no-valida.component';
+import { GaleriaComponent } from './galeria/galeria.component';
+import { VigilanteGaleriaGuard } from './vigilante-galeria.guard';
+import { PerfilComponent } from './perfil/perfil.component';
 
 //Rutas
 const routes: Routes = [
@@ -35,6 +38,8 @@ const routes: Routes = [
   { path: 'registro', component: FormularioComponent,canActivate: [VigilanteGuard] },
   { path: 'login', component: LoginComponent, canActivate: [VigilanteGuard]},
   { path: 'nodisponible', component: RutaNoValidaComponent },
+  { path: 'galeria', component: GaleriaComponent, canActivate: [VigilanteGaleriaGuard]},
+  { path: 'perfil', component: PerfilComponent, canActivate: [VigilanteGaleriaGuard]},
   { path: '**', component: InicioComponent}
 
 ];
@@ -55,7 +60,9 @@ const routes: Routes = [
     FormularioComponent,
     CarruselComponent,
     LoginComponent,
-    RutaNoValidaComponent
+    RutaNoValidaComponent,
+    GaleriaComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

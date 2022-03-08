@@ -1,0 +1,20 @@
+<div class="container">
+    <h2 class="mt-3 mb-3">Perfil</h2>
+
+    <div class="row, mb-5">
+        <div class="card">
+            <h5 class="card-header" *ngIf="usuarioLog!=undefined">Usuario: {{usuarioLog.nick}}</h5>
+            <div class="card-body">
+                <h6 class="card-text">Estos son los datos que tiene registrados:</h6>
+                <ul class="list-group list-group-flush" *ngIf="usuarioLog!=undefined">
+                    <li class="list-group-item" >ID: {{ usuarioLog.id }}</li>
+                    <li class="list-group-item" >Nombre: {{ usuarioLog.nombre }}</li>
+                    <li class="list-group-item" >Apellidos: {{ usuarioLog.apellidos }}</li>
+                    <li class="list-group-item" >Email: {{ usuarioLog.email }}</li>
+                    <li class="list-group-item" >Fecha de nacimiento: {{ usuarioLog.fechaNac }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

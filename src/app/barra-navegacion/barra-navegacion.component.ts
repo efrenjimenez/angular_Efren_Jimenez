@@ -9,9 +9,10 @@ import { Usuario } from '../modelos/usuario.modelo';
 export class BarraNavegacionComponent implements OnInit {
 
   opcion1: String = 'Inicio';
-  opcion2: String = 'Login';
-  opcion3: String = 'Registro';
-  opcion4: String = 'Acerca de'
+  opcion2: String = 'Galería';
+  opcion3: String = 'Login';
+  opcion4: String = 'Registro';
+  opcion5: String = 'Acerca de';
   //usuarioLog: any={id:'', nombre: '', apellidos: '', email:'', fechaNac:'', nick:'', password: ''};
   usuarioLog: Usuario | undefined;
 

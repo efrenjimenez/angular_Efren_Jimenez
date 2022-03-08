@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-6 mb-3">
+        <div class="col-12 col-sm-8 col-md-6 mb-3">
             <h2 class="mt-3 mb-3">Registro</h2>
             <form (ngSubmit)="onSubmit()" #formusu="ngForm">
                 <div class="row mb-4">
@@ -65,14 +65,14 @@
                             Por favor introduzca la contraseña.
                         </p>
                     </div>
-                </div>                           
-                <button type="submit" class="btn btn-primary mt-2" [disabled]="!formusu.valid">Darme de alta</button>
-                        <!-- <p class="alert alert-danger mt-3 " *ngIf="!formusu.valid && formusu.controls.password.touched"> Por favor complete todos los campos correctamente</p> -->
+                </div>       
+                    <button type="submit" class="btn btn-primary mt-2" [disabled]="!formusu.valid">Darme de alta</button>
             </form>
         </div>
-        <div class="col-6 mt-5">
+        <div class="col col-sm-4 col-md-6 mt-5 d-none d-sm-block">
             <img src="../../assets/img/usuario.png" class="rounded img-fluid" alt="Responsive image">
         </div>        
+        <p class="" >Si ya dispone de cuenta pulse <a routerLink="/login">aquí</a></p>
     </div>
     <!-- <hr>
     <pre>{{ usuario | json }}</pre> -->
