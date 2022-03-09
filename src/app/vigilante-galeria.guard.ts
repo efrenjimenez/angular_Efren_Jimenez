@@ -13,8 +13,8 @@ export class VigilanteGaleriaGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       
     if(sessionStorage.getItem("logeado")=="false"){
-      //window.location.href="nodisponible";
-      window.location.href="";
+      window.location.href="nodisponible";
+      //window.location.href="";
       return false;
     }
     else{

@@ -20,9 +20,11 @@ constructor(private router:Router){
       return true;
     }
     else{
-      //window.location.href="/nodisponible";
-      this.router.navigate(['nodisponible']);
-
+      window.location.href="/nodisponible";
+      //this.router.navigate(['nodisponible']);
+      // console.log("Deniega")
+      // alert("No puedes accedes a esta ruta estando logeado")
+      // window.location.href="";
       return false;
     }
   }
