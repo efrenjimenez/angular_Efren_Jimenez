@@ -18,6 +18,7 @@ export class ACercaDeComponent implements OnInit {
     "TypeScript: 4.5.5", 
     "Bootstrap: 5.1.3",
     "Jquery: 3.6.0",
+    "Popperjs/core: 2.11.2",
     "rxjs: 7.5.0",
     "tslib: 2.3.0",
     "zone.js: 0.11.4"
