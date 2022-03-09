@@ -15,13 +15,11 @@ export class ACercaDeComponent implements OnInit {
     "Angular CLI: 13.2.4",
     "Node: 16.14.0",
     "Package Manager: npm 8.3.1",
-    "TypeScript: 4.5.5", 
+    "TypeScript: 4.5.5",
+    "rxjs: 7.5.4",
     "Bootstrap: 5.1.3",
     "Jquery: 3.6.0",
-    "Popperjs/core: 2.11.2",
-    "rxjs: 7.5.0",
-    "tslib: 2.3.0",
-    "zone.js: 0.11.4"
+    "Popperjs/core: 2.11.2"
   ];
   
   constructor(private autorService: AutorService) { }
