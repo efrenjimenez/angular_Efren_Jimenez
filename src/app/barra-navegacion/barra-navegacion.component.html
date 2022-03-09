@@ -24,7 +24,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/acercade">{{ opcion5 }}</a>
         </li>
-        <div *ngIf="usuarioLog!=null">
+        <div *ngIf="usuarioLog!=undefined">
           <li class="nav-item">
             <a class="nav-link"routerLink="/perfil" >Usuario: {{usuarioLog.nick}}</a>
           </li>
